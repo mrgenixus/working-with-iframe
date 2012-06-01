@@ -1,5 +1,5 @@
 # Working with Iframes
-* lets just say, you probably don't *
+*lets just say, you probably don't*
 ## The setup
 ### jQuery
 

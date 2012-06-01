@@ -112,6 +112,7 @@
   			}
 
   		},function(i,v){
+  			if(v.click != undefined){
   			$('#example-bar')
   				.append($('<button>')
 	  				.html(i)
@@ -124,6 +125,7 @@
 	  					}
 	  				})
   				);
+  			}
   			
   		})
   		

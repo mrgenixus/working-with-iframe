@@ -1,5 +1,5 @@
 # Working with Iframes
-* lets just say, you probably don't *
+*lets just say, you probably don't*
 ## The setup
 ### jQuery
 
@@ -16,11 +16,11 @@ put the script includes at the bottom for sanity, reliable load
 
 ## Cool Paradigm
 ### Bootstrap stuff
-	I used the alert and button-group stuff to huge effect, I love those features
+I used the alert and button-group stuff to huge effect, I love those features
 ### jQuery stuff
-	*$.each learn it, love it*
-	the strategy was, iterate over an object, add a button for each memeber, and bind its click memeber to the button;
-	after that, find out if the event-handler returns true, and post and alert with a predefined message.
+*$.each learn it, love it*
+the strategy was, iterate over an object, add a button for each memeber, and bind its click memeber to the button;
+after that, find out if the event-handler returns true, and post and alert with a predefined message.
 
 ## Tests
 ### Can I add buttons and other elements to the form in the iframe?
@@ -31,7 +31,9 @@ put the script includes at the bottom for sanity, reliable load
  Yes
 ### Can I put my handlers ahead of the built-in ones? 
 .. That's a no:
-** The problem: ** to do this, we need to copy a string from the onclick event, turn it into a funciton and execute it in the correct scope: e.g. the iframe. We can't, basically.  Technically, we can use 'with' and 'eval'. If you don't understand the problem, look up the rationale for deprecating them. You read that right.
+**The problem:** to do this, we need to copy a string from the onclick event, turn it into a funciton and execute it in the correct scope: e.g. the iframe. We can't, basically.  Technically, we can use 'with' and 'eval'. If you don't understand the problem, look up the rationale for deprecating them. You read that right.
+### Can I clobber the existing ones?
+Easy as pie
 ### Can I remove my handlers?
 absolutely
 ### More tests?

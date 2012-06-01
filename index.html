@@ -9,7 +9,6 @@
   	  .browserinbrowser {
   	  	margin:0 auto;
   	  	display:block;
-  	  	border:1px solid black;
   	  	width:960px;
   	  	height:400px;
   	  }
@@ -18,6 +17,7 @@
 		width:100%;
 		height:100%;
   	  	display:block;
+  	  	border:0; padding:0; margin:0;
   	  }
   	  #output, #example-bar{
   	  	margin:auto;
@@ -92,22 +92,22 @@
   				click:function(idocument,parent){
   					var $action_button = $(idocument.getElementById('action_button'));
   					//replace existing function to prepend code
-					var action_function = $action_button.attr("onclick"); $action_button.attr("onclick", "return false;");
-					var orig_function_encap = function(){
-						call_on_iframe(function(){
-							with(this){
-								eval(action_function);
-							}
-						})
-					}
+					
 					var new_action_function = function(){
 						$output.append(bootstrap_alert('<strong>Notify:</strong> action button, clicked'));
 					}
-
-					$action_button.click(new_action_function).click(orig_function_encap);
+					$action_button.on('click.iframe',new_action_function)
 					parent.message = "<strong>Success</strong> click helper applied";
 					return $action_button.length
 
+  				}
+  			},
+  			'detach event':{
+  				click:function(idocument,parent){
+  					var $action_button = $(idocument.getElementById('action_button'));
+  					$action_button.off('.iframe');
+  					parent.message = "<strong>Success</strong> All events removed from action button";
+  					return true;
   				}
   			}
 
@@ -115,7 +115,7 @@
   			$('#example-bar')
   				.append($('<button>')
 	  				.html(i)
-	  				.click(function(){ 
+	  				.on('click.parentframe',function(){ 
 	  					if(v.click($('#handle')[0].contentDocument,v)){
 	  						$output.html(bootstrap_alert(v.message,'success'));
 	  					} else {

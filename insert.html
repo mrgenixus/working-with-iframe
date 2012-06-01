@@ -20,33 +20,42 @@
   	  	display:block;
   	  }
 
+  	  body{
+  	  	padding:0px, border:0px;
+	  }
+	  #visual {
+	  	height:100%;
+	  	overflow:auto;
+	  }
+	  #well {
+	  	height:400px;
+	  }
   	</style>
   	
   </head>
   <body>
-  	
-  	<form action="" method="POST" id="form1">
-  		<label>value1<input name="data[meta-model][value1]" type="text"></label>
-  		<a id="action_button" class="btn btn-reset" onclick="notify_submit('submission complete')">Action Button</a>
-  	</form>
-  	<div id="output_space"></div>
-  	<script src="js/jquery-1.7.2.min.js"></script>
-  	<script src="js/bootstrap-alert.js"></script>
-  	<script>
+	  	<form action="" method="POST" id="form1">
+	  		<label>value1<input name="data[meta-model][value1]" type="text"></label>
+	  		<a id="action_button" class="btn btn-reset" onclick="notify_submit('submission complete')">Action Button</a>
+	  	</form>
+	  	<div id="output_space"></div>
+	  	<script src="js/jquery-1.7.2.min.js"></script>
+	  	<script src="js/bootstrap-alert.js"></script>
+	  	<script>
 
-  		$(document).ready(function(){
-  			bootstrap_alert = function(message,type){
-	  			var available_types = {'error':'alert-error','success':'alert-success','info':'alert-info'}
-	  			if (type != undefined && type in available_types) type = available_types[type] ; else type = '';
+	  		$(document).ready(function(){
+	  			bootstrap_alert = function(message,type){
+		  			var available_types = {'error':'alert-error','success':'alert-success','info':'alert-info'}
+		  			if (type != undefined && type in available_types) type = available_types[type] ; else type = '';
 
-	  			var $alert = $('<div class="alert ' + type + '">');
-	  			$alert.append($('<button class="close" data-dismiss="alert">x</button>'));
-	  			return $alert.append(message);
-	  		}
-  			window.notify_submit = function(msq){
-  				$('#output_space').html(bootstrap_alert(msq));
-  			}
-  		})
-  	</script>
+		  			var $alert = $('<div class="alert ' + type + '">');
+		  			$alert.append($('<button class="close" data-dismiss="alert">x</button>'));
+		  			return $alert.append(message);
+		  		}
+	  			window.notify_submit = function(msq){
+	  				$('#output_space').html(bootstrap_alert(msq));
+	  			}
+	  		})
+	  	</script>
   </body>
 </html>

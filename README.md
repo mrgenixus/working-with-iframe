@@ -1,5 +1,7 @@
 # Working with Iframes
-*lets just say, you probably don't*
+*lets just say, you probably don't need to refrence this for anything that you SHOULD be doing*
+
+This is designed to work with javascript interacting between frames and is designed to demonstrate what can and cannot be communicated via JavaScript beween frames.
 ## The setup
 ### jQuery
 

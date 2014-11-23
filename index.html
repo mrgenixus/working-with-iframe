@@ -6,16 +6,28 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
 
   </head>
-  <body><div class="btn-group" id="example-bar">
-
-	</div>
-  	<div class='browserinbrowser'>
-  	  <iframe src='insert.html' id="handle" ></iframe>
-  	</div>
-  	<div id="output"></div>
-  	<script src='js/jquery-1.7.2.min.js'></script>
-  	<script src='js/bootstrap.min.js'></script>
-  	<script src='js/bootstrap-alert.js'></script>
-  	<script src="js/main.js"></script>
+  <body>
+    <div class="container main-container">
+      <div class="hero-unit">
+        <h1>Working with iFrame</h1>
+        <p>This is an example page with an iframe in it.  Use the buttons to modify the document in the iframe below</p>
+        <p><a href="http://github.com/mrgenixus/working-with-iframe" class="btn btn-primary btn-large">Learn more »</a></p>
+      </div>
+      <div class="row">
+        <div class="span4 left-column">
+          <div class="btn-group btn-group-vertical" id="example-bar">
+        	</div>
+          <div id="output"></div>
+        </div>
+      	<div class='browserinbrowser span8'>
+          <h2>An Iframe: </h2>
+      	  <iframe src='insert.html' id="handle" ></iframe>
+      	</div>
+      </div>
+    </div>
+    <script src='js/jquery-1.7.2.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src='js/bootstrap-alert.js'></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
